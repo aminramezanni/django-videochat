@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,500&display=swap');
+
 :root {
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
@@ -5,8 +7,9 @@
 
 body {
     background-color: rgba(232, 233, 239, 1);
+    font-family: 'Roboto', sans-serif;
 }
-
+/* -------------------- LOBBY STYLE ---------------- */
 #logo {
     display: block;
     width: 100px;
@@ -15,15 +18,66 @@ body {
 
 
 #form-container {
-    width: 400px;
+    height: 400px;
+    width: 500px;
     box-shadow: var(--shadow);
     background-color: #fff;
     padding: 30px;
-    border-radius: 5px;
+    border-radius: 10px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#welcome-message{
+    text-align: center;
+    margin: 20px;
+
+}
+
+#welcome-message h1{
+    font-size: 36px;
+}
+
+.form-field{
+    margin: 20px;
+}
+
+.form-field label{
+    font-size: 16px;
+    line-height: 2em;
+}
+
+.form-field input{
+    width: 100%;
+    border: 2px solid rgba(198, 202, 219, 1);
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form-field input[type='submit']{
+    background-color: rgb(57, 75, 169);
+    border: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 450px) {
+    #form-container{
+        width: 95%;
+    }
+
+    #welcome-message h1{
+        font-size: 24px;
+    }
+}
+
+/* ------------------- Room Styling --------------- */
+
+#room-name-wrapper{
+    text-align: center;
+    font-size: 18px;
 }
 
 
@@ -44,6 +98,8 @@ body {
     border-radius: 5px;
     margin: 2px;
     background-color: rgba(198, 202, 219, 1);
+    position: relative;
+
 }
 
 .video-player{
@@ -51,8 +107,32 @@ body {
     width: 100%;
 }
 
+.video-player > *{
+    border-radius: 5px;
+}
 
-/* ------------------- Room Styling --------------- */
+.username-wrapper{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+@media  screen and (max-width: 1650px) {
+    .video-container{
+        flex-basis: 300px;
+        min-height: 200px;
+    }
+}
+
+
+/*-------------- Room | Controls ------------------ */
+
 
 #controls-wrapper{
     display: flex;
